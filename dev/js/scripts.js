@@ -122,6 +122,8 @@ ready(() => {
   function liftOffTL(){
     let tl = gsap.timeline();
 
+    tl.from(".all", {rotation:360, duration:2, scale:100, ease:"power2.out"}, "zoom")
+
     
     
 
@@ -137,23 +139,23 @@ ready(() => {
 
 
 //*********** flame functions DO NOT INCLUDE IN MAIN TL ****************
-function controlFlames(){
+//function controlFlames(){
 
-  showSmoke();
+  //showSmoke();
 
-  console.log('SHOW TIME');
-  gsap.set(".flames",{display:"block"});
+  //console.log('SHOW TIME');
+  //gsap.set(".flames",{display:"block"});
 
-  flamesTL.to("#left-blue",{duration:0.25, scaleY:.25,yoyo:true, repeat:-1},"flames")
-  .to("#left-dark-blue",{duration:0.15, scaleY:.15,yoyo:true, repeat:-1},"flames")
-  .to("#right-blue",{duration:0.25, scaleY:.25,yoyo:true, repeat:-1},"flames")
-  .to("#right-dark-blue",{duration:0.15, scaleY:.15,yoyo:true, repeat:-1},"flames")
+  //flamesTL.to("#left-blue",{duration:0.25, scaleY:.25,yoyo:true, repeat:-1},"flames")
+  //.to("#left-dark-blue",{duration:0.15, scaleY:.15,yoyo:true, repeat:-1},"flames")
+  //.to("#right-blue",{duration:0.25, scaleY:.25,yoyo:true, repeat:-1},"flames")
+  //.to("#right-dark-blue",{duration:0.15, scaleY:.15,yoyo:true, repeat:-1},"flames")
 
-  flamesTL.play()
+  //flamesTL.play()
 }
 
-function showSmoke(){
-  gsap.set(".smoke",{display:"block"});
+//function showSmoke(){
+  //gsap.set(".smoke",{display:"block"});
 }
 
 
@@ -166,9 +168,9 @@ gsap.set('#svg-container',{visibility:"visible"});
 //3. BUILD Main timeline
 mainTL.add(fadeInTL())
 .add(zoomTL(), "-=5")
-.add(spaceshipTL(), "-=3")
-.add(cloudsTL(), )
-//.add(liftOffTL()"-=5")
+.add(spaceshipTL(), "-=4")
+.add(cloudsTL(),"-=3" )
+.add(liftOffTL())
 
 
 
